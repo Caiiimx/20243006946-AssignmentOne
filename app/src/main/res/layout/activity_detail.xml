@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Detail screen (Figure 5).
+
+    Layout strategy:
+      * the header and the body share the screen height with layout_weight, so
+        neither of them depends on a fixed size;
+      * the header is a RelativeLayout with the campus photo behind the service
+        icon and the service name;
+      * the body is a ScrollView because the Facilities text is longer than one
+        screen, and a vertical LinearLayout holds the title and the content.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Header: campus photo, service icon and service name -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/ivDetailBanner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/banner_description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_main_banner" />
+
+        <ImageView
+            android:id="@+id/ivDetailIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_margin="@dimen/detail_header_margin"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/detail_icon_description"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_facilities" />
+
+        <TextView
+            android:id="@+id/tvDetailHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@id/ivDetailIcon"
+            android:gravity="center"
+            android:padding="@dimen/banner_title_padding"
+            android:text="@string/label_facilities"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/detail_header_title_size" />
+    </RelativeLayout>
+
+    <!-- Body: title and content, scrollable because the Facilities text is long -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@android:color/white"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/detail_content_padding">
+
+            <TextView
+                android:id="@+id/tvDetailTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/detail_placeholder_title"
+                android:textSize="@dimen/detail_title_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDetailContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_placeholder_content"
+                android:textSize="@dimen/detail_content_size" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

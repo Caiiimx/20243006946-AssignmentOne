@@ -15,4 +15,17 @@
     <string name="toast_events_clicked">Events clicked</string>
     <string name="toast_clubs_clicked">Clubs clicked</string>
     <string name="toast_support_clicked">Support clicked</string>
+
+    <!-- Detail screen (Part F) -->
+    <string name="detail_icon_description">Icon of the selected service area</string>
+    <string name="detail_placeholder_title">This is a title</string>
+    <string name="detail_placeholder_content">This is content</string>
+
+    <!-- Short labels of the four service areas, indexed like the arrays in arrays.xml -->
+    <string-array name="string_array_labels">
+        <item>@string/label_facilities</item>
+        <item>@string/label_events</item>
+        <item>@string/label_clubs</item>
+        <item>@string/label_support</item>
+    </string-array>
 </resources>
