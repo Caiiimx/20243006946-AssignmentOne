@@ -9,4 +9,10 @@
     <string name="label_events">Events</string>
     <string name="label_clubs">Clubs</string>
     <string name="label_support">Support</string>
+
+    <!-- Toasts that confirm which image button was clicked (Part E) -->
+    <string name="toast_facilities_clicked">Facilities clicked</string>
+    <string name="toast_events_clicked">Events clicked</string>
+    <string name="toast_clubs_clicked">Clubs clicked</string>
+    <string name="toast_support_clicked">Support clicked</string>
 </resources>

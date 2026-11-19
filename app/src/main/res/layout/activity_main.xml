@@ -69,6 +69,7 @@
                 android:adjustViewBounds="true"
                 android:background="@drawable/button_selector"
                 android:contentDescription="@string/label_facilities"
+                android:onClick="onFacilitiesClick"
                 android:scaleType="fitCenter"
                 android:src="@drawable/img_btn_facilities" />
 
@@ -97,6 +98,7 @@
                 android:adjustViewBounds="true"
                 android:background="@drawable/button_selector"
                 android:contentDescription="@string/label_events"
+                android:onClick="onEventsClick"
                 android:scaleType="fitCenter"
                 android:src="@drawable/img_btn_events" />
 
@@ -125,6 +127,7 @@
                 android:adjustViewBounds="true"
                 android:background="@drawable/button_selector"
                 android:contentDescription="@string/label_clubs"
+                android:onClick="onClubsClick"
                 android:scaleType="fitCenter"
                 android:src="@drawable/img_btn_clubs" />
 
@@ -153,6 +156,7 @@
                 android:adjustViewBounds="true"
                 android:background="@drawable/button_selector"
                 android:contentDescription="@string/label_support"
+                android:onClick="onSupportClick"
                 android:scaleType="fitCenter"
                 android:src="@drawable/img_btn_support" />
 
