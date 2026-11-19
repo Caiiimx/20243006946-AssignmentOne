@@ -8,7 +8,9 @@
       * the banner is a RelativeLayout that puts the 40sp title on top of the
         campus photo (the only fixed text size allowed by the specification);
       * the four service areas sit in a GridLayout using columnWeight/rowWeight,
-        which makes the two-by-two grid scale with any screen size.
+        which makes the two-by-two grid scale with any screen size;
+      * each ImageButton uses the button_selector drawable so that it is green at
+        rest and light green while pressed.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -41,11 +43,12 @@
             android:textSize="40sp" />
     </RelativeLayout>
 
-    <!-- The four service areas in a two-by-two grid -->
+    <!-- The four service areas in a two-by-two grid on a green background -->
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
+        android:background="@color/green"
         android:columnCount="2"
         android:rowCount="2">
 
@@ -64,6 +67,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
+                android:background="@drawable/button_selector"
                 android:contentDescription="@string/label_facilities"
                 android:scaleType="fitCenter"
                 android:src="@drawable/img_btn_facilities" />
@@ -72,6 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_facilities"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/button_label_size" />
         </LinearLayout>
 
@@ -90,6 +95,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
+                android:background="@drawable/button_selector"
                 android:contentDescription="@string/label_events"
                 android:scaleType="fitCenter"
                 android:src="@drawable/img_btn_events" />
@@ -98,6 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_events"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/button_label_size" />
         </LinearLayout>
 
@@ -116,6 +123,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
+                android:background="@drawable/button_selector"
                 android:contentDescription="@string/label_clubs"
                 android:scaleType="fitCenter"
                 android:src="@drawable/img_btn_clubs" />
@@ -124,6 +132,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_clubs"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/button_label_size" />
         </LinearLayout>
 
@@ -142,6 +151,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
+                android:background="@drawable/button_selector"
                 android:contentDescription="@string/label_support"
                 android:scaleType="fitCenter"
                 android:src="@drawable/img_btn_support" />
@@ -150,6 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/label_support"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/button_label_size" />
         </LinearLayout>
     </GridLayout>
