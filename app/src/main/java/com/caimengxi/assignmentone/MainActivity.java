@@ -1,5 +1,6 @@
 package com.caimengxi.assignmentone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -9,10 +10,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Main screen of CampusLife.  Every image button reports which service area the
- * user selected; the click handlers are referenced from activity_main.xml with
- * the android:onClick attribute (in both the portrait and the landscape layout).
+ * user selected and then opens {@link DetailActivity} with the index of that
+ * area; the click handlers are referenced from activity_main.xml with the
+ * android:onClick attribute (in both the portrait and the landscape layout).
  */
 public class MainActivity extends AppCompatActivity {
+
+    /** Index of each service area inside the arrays defined in arrays.xml. */
+    private static final int TOPIC_FACILITIES = 0;
+    private static final int TOPIC_EVENTS = 1;
+    private static final int TOPIC_CLUBS = 2;
+    private static final int TOPIC_SUPPORT = 3;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view the ImageButton that was clicked
      */
     public void onFacilitiesClick(View view) {
-        Toast.makeText(this, R.string.toast_facilities_clicked, Toast.LENGTH_SHORT).show();
+        openDetail(TOPIC_FACILITIES, R.string.toast_facilities_clicked);
     }
 
     /**
@@ -35,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view the ImageButton that was clicked
      */
     public void onEventsClick(View view) {
-        Toast.makeText(this, R.string.toast_events_clicked, Toast.LENGTH_SHORT).show();
+        openDetail(TOPIC_EVENTS, R.string.toast_events_clicked);
     }
 
     /**
@@ -44,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view the ImageButton that was clicked
      */
     public void onClubsClick(View view) {
-        Toast.makeText(this, R.string.toast_clubs_clicked, Toast.LENGTH_SHORT).show();
+        openDetail(TOPIC_CLUBS, R.string.toast_clubs_clicked);
     }
 
     /**
@@ -53,6 +61,22 @@ public class MainActivity extends AppCompatActivity {
      * @param view the ImageButton that was clicked
      */
     public void onSupportClick(View view) {
-        Toast.makeText(this, R.string.toast_support_clicked, Toast.LENGTH_SHORT).show();
+        openDetail(TOPIC_SUPPORT, R.string.toast_support_clicked);
+    }
+
+    /**
+     * Confirms the tap with a Toast and starts {@link DetailActivity} through an
+     * explicit Intent.  The index of the selected service area travels with the
+     * Intent so that the detail screen knows which content to display.
+     *
+     * @param topicIndex   index of the selected service area
+     * @param toastMessage string resource shown in the confirmation Toast
+     */
+    private void openDetail(int topicIndex, int toastMessage) {
+        Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
+
+        Intent openDetail = new Intent(this, DetailActivity.class);
+        openDetail.putExtra(DetailActivity.EXTRA_TOPIC_INDEX, topicIndex);
+        startActivity(openDetail);
     }
 }
