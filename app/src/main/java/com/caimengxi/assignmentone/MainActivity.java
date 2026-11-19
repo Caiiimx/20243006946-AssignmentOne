@@ -13,6 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
  * user selected and then opens {@link DetailActivity} with the index of that
  * area; the click handlers are referenced from activity_main.xml with the
  * android:onClick attribute (in both the portrait and the landscape layout).
+ *
+ * <p>The TOPIC_* constants below must stay in the same order as the entries of
+ * the arrays in res/values/arrays.xml, because DetailActivity uses the index it
+ * receives to read those arrays.</p>
  */
 public class MainActivity extends AppCompatActivity {
 
