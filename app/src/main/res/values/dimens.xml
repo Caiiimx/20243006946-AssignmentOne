@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    All spacing and text sizes live here so that the layouts themselves never
+    contain a hard-coded dimension.  Widths and heights are always expressed with
+    match_parent, wrap_content, 0dp + layout_weight or the image aspect ratio.
+-->
+<resources>
+    <dimen name="banner_title_padding">16dp</dimen>
+    <dimen name="button_margin">8dp</dimen>
+    <dimen name="button_label_size">16sp</dimen>
+</resources>

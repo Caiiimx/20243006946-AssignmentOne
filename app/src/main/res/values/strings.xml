@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AssignmentOne</string>
+
+    <!-- Main screen -->
+    <string name="banner_title">Welcome to CampusLife - Your Pocket Guide to University of Waikato</string>
+    <string name="banner_description">Photograph of the University of Waikato campus</string>
+    <string name="label_facilities">Facilities</string>
+    <string name="label_events">Events</string>
+    <string name="label_clubs">Clubs</string>
+    <string name="label_support">Support</string>
 </resources>
