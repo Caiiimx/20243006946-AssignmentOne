@@ -1,0 +1,19 @@
+# Build output and local configuration
+.gradle/
+build/
+local.properties
+*.iml
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.keystore
+.DS_Store
+
+# Course material that is not part of the application
+*.pdf
+*.docx
+Resources/
+.reasonix/
