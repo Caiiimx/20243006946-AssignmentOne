@@ -8,9 +8,11 @@
     <dimen name="banner_title_padding">16dp</dimen>
     <dimen name="button_margin">8dp</dimen>
     <dimen name="button_label_size">16sp</dimen>
+    <!-- Side padding keeps the service icons at a sensible size inside their cell -->
+    <dimen name="button_icon_side_padding">48dp</dimen>
 
     <!-- Detail screen -->
-    <dimen name="detail_header_margin">8dp</dimen>
+    <dimen name="detail_header_margin">16dp</dimen>
     <dimen name="detail_header_title_size">24sp</dimen>
     <dimen name="detail_content_padding">16dp</dimen>
     <dimen name="detail_title_size">20sp</dimen>

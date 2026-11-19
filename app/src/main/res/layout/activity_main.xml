@@ -3,14 +3,15 @@
     Main screen of CampusLife (portrait).
 
     Layout strategy:
-      * a vertical LinearLayout splits the screen between the banner and the
-        button grid with layout_weight, so nothing depends on a fixed size;
+      * a vertical LinearLayout splits the screen between the banner (weight 1)
+        and the button grid (weight 1.2), so nothing depends on a fixed size;
       * the banner is a RelativeLayout that puts the 40sp title on top of the
         campus photo (the only fixed text size allowed by the specification);
       * the four service areas sit in a GridLayout using columnWeight/rowWeight,
         which makes the two-by-two grid scale with any screen size;
       * each ImageButton uses the button_selector drawable so that it is green at
-        rest and light green while pressed.
+        rest and light green while pressed; side padding keeps the icon in
+        proportion and the trailing Space lifts the label towards the icon.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -21,7 +22,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2">
+        android:layout_weight="1">
 
         <ImageView
             android:id="@+id/ivBanner"
@@ -47,7 +48,7 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
+        android:layout_weight="1.2"
         android:background="@color/green"
         android:columnCount="2"
         android:rowCount="2">
@@ -58,7 +59,6 @@
             android:layout_columnWeight="1"
             android:layout_margin="@dimen/button_margin"
             android:layout_rowWeight="1"
-            android:gravity="center"
             android:orientation="vertical">
 
             <ImageButton
@@ -66,19 +66,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:adjustViewBounds="true"
                 android:background="@drawable/button_selector"
                 android:contentDescription="@string/label_facilities"
                 android:onClick="onFacilitiesClick"
+                android:paddingStart="@dimen/button_icon_side_padding"
+                android:paddingEnd="@dimen/button_icon_side_padding"
                 android:scaleType="fitCenter"
                 android:src="@drawable/img_btn_facilities" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/label_facilities"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/button_label_size" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2" />
         </LinearLayout>
 
         <LinearLayout
@@ -87,7 +94,6 @@
             android:layout_columnWeight="1"
             android:layout_margin="@dimen/button_margin"
             android:layout_rowWeight="1"
-            android:gravity="center"
             android:orientation="vertical">
 
             <ImageButton
@@ -95,19 +101,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:adjustViewBounds="true"
                 android:background="@drawable/button_selector"
                 android:contentDescription="@string/label_events"
                 android:onClick="onEventsClick"
+                android:paddingStart="@dimen/button_icon_side_padding"
+                android:paddingEnd="@dimen/button_icon_side_padding"
                 android:scaleType="fitCenter"
                 android:src="@drawable/img_btn_events" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/label_events"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/button_label_size" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2" />
         </LinearLayout>
 
         <LinearLayout
@@ -116,7 +129,6 @@
             android:layout_columnWeight="1"
             android:layout_margin="@dimen/button_margin"
             android:layout_rowWeight="1"
-            android:gravity="center"
             android:orientation="vertical">
 
             <ImageButton
@@ -124,19 +136,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:adjustViewBounds="true"
                 android:background="@drawable/button_selector"
                 android:contentDescription="@string/label_clubs"
                 android:onClick="onClubsClick"
+                android:paddingStart="@dimen/button_icon_side_padding"
+                android:paddingEnd="@dimen/button_icon_side_padding"
                 android:scaleType="fitCenter"
                 android:src="@drawable/img_btn_clubs" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/label_clubs"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/button_label_size" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2" />
         </LinearLayout>
 
         <LinearLayout
@@ -145,7 +164,6 @@
             android:layout_columnWeight="1"
             android:layout_margin="@dimen/button_margin"
             android:layout_rowWeight="1"
-            android:gravity="center"
             android:orientation="vertical">
 
             <ImageButton
@@ -153,19 +171,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:adjustViewBounds="true"
                 android:background="@drawable/button_selector"
                 android:contentDescription="@string/label_support"
                 android:onClick="onSupportClick"
+                android:paddingStart="@dimen/button_icon_side_padding"
+                android:paddingEnd="@dimen/button_icon_side_padding"
                 android:scaleType="fitCenter"
                 android:src="@drawable/img_btn_support" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/label_support"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/button_label_size" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2" />
         </LinearLayout>
     </GridLayout>
 
